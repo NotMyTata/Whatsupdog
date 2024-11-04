@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "21734416102",
+    "project_id": "whatsupdog-project",
+    "storage_bucket": "whatsupdog-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21734416102:android:1ed0939a9f1c51ff72e527",
+        "android_client_info": {
+          "package_name": "com.example.whatsupdog"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa7edRZUK6dZPrDl0A2b6rUfzV4kB_DVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
