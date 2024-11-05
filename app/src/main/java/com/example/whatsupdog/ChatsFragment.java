@@ -20,12 +20,12 @@ public class ChatsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View groupFragmentView = inflater.inflate(R.layout.fragment_chats, container, false);
-        initialization(groupFragmentView);
+        initializedComponent(groupFragmentView);
         return groupFragmentView;
     }
 
-    private void initialization(View v) {
-        ListView lv = v.findViewById(R.id.listview);
+    private void initializedComponent(View v) {
+        ListView lv = v.findViewById(R.id.chat_listview);
         chatList = new ArrayList<Chat>();
         chatsAdapter = new ChatsAdapter(getContext(), R.layout.fragment_chats, chatList);
 

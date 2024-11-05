@@ -10,6 +10,6 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="249dp"
         android:layout_height="249dp"
-        android:src="@drawable/ic_main_background" />
+        android:src="@drawable/ic_main_background_dark" />
 
 </LinearLayout>

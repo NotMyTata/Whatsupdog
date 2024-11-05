@@ -3,13 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CallsFragment">
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    tools:context=".ChatsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="call"
-        android:textColor="@color/white"/>
+        android:text="Call History"
+        android:textSize="20sp"
+        android:textColor="@color/white" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:divider="#00000000"
+        android:dividerHeight="15dp"
+        android:id="@+id/call_listview"/>
 
 </RelativeLayout>

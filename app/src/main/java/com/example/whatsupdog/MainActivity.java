@@ -31,10 +31,43 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch(tab.getPosition()){
+                    case 0:
+                        tab.setIcon(R.drawable.outline_message_24);
+                        tabLayout.getTabAt(1).setIcon(R.drawable.baseline_group_24);
+                        tabLayout.getTabAt(2).setIcon(R.drawable.baseline_call_24);
+                        break;
+                    case 1:
+                        tabLayout.getTabAt(0).setIcon(R.drawable.baseline_message_24);
+                        tab.setIcon(R.drawable.outline_group_24);
+                        tabLayout.getTabAt(2).setIcon(R.drawable.baseline_call_24);
+                        break;
+                    case 2:
+                        tabLayout.getTabAt(0).setIcon(R.drawable.baseline_message_24);
+                        tabLayout.getTabAt(1).setIcon(R.drawable.baseline_group_24);
+                        tab.setIcon(R.drawable.outline_call_24);
+                        break;
+                    default: break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(R.drawable.baseline_message_24);
+        tabLayout.getTabAt(0).setIcon(R.drawable.outline_message_24);
         tabLayout.getTabAt(1).setIcon(R.drawable.baseline_group_24);
         tabLayout.getTabAt(2).setIcon(R.drawable.baseline_call_24);
     }

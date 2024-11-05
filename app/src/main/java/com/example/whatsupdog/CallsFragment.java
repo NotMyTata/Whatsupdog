@@ -7,58 +7,44 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CallsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
 public class CallsFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public CallsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CallsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CallsFragment newInstance(String param1, String param2) {
-        CallsFragment fragment = new CallsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private CallsAdapter callsAdapter;
+    private ArrayList<Call> callList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calls, container, false);
+        View groupFragmentView = inflater.inflate(R.layout.fragment_calls, container, false);
+        initializedComponent(groupFragmentView);
+        return groupFragmentView;
+    }
+
+    private void initializedComponent(View v) {
+        ListView lv = v.findViewById(R.id.call_listview);
+        callList = new ArrayList<Call>();
+        callsAdapter = new CallsAdapter(getContext(), R.layout.fragment_calls, callList);
+
+        int[] profile = {R.drawable.baseline_person_24_blue, R.drawable.baseline_person_24_red};
+        String[] name = {"Test", "Arad"};
+        int[] inout = {R.drawable.baseline_call_made_success_18, R.drawable.baseline_call_received_failed_18};
+        String[] datetime = {"Today, 21:30", "Yesterday, 07:00"};
+        addAllCall(profile, name, inout, datetime);
+
+        lv.setAdapter(callsAdapter);
+    }
+
+    private void addAllCall(int[] profile, String[] name, int[] inout, String[] datetime) {
+        for (int i = 0; i < profile.length; i++) {
+            addCall(profile[i], name[i], inout[i], datetime[i]);
+        }
+        callsAdapter.notifyDataSetChanged();
+    }
+
+    private void addCall(int profile, String name, int inout, String datetime) {
+        callList.add(new Call(profile, name, inout, datetime));
     }
 }

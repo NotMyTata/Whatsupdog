@@ -26,7 +26,8 @@
         android:text="Lorem Ipsum"
         android:textColor="@color/white"
         android:layout_marginLeft="10dp"
-        android:paddingTop="10dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/chat_profile"
         app:layout_constraintBottom_toTopOf="@+id/chat_status"/>
     <ImageView
@@ -56,7 +57,8 @@
         android:text="21:39"
         android:textSize="11sp"
         android:textColor="@color/grey"
-        android:paddingTop="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/chat_unread"/>
     <androidx.cardview.widget.CardView
