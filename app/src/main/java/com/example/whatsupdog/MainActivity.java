@@ -30,5 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        setupTabIcons();
+    }
+
+    private void setupTabIcons() {
+        tabLayout.getTabAt(0).setIcon(R.drawable.baseline_message_24);
+        tabLayout.getTabAt(1).setIcon(R.drawable.baseline_group_24);
+        tabLayout.getTabAt(2).setIcon(R.drawable.baseline_call_24);
     }
 }
