@@ -29,18 +29,20 @@ public class ChatsFragment extends Fragment {
         chatList = new ArrayList<Chat>();
         chatsAdapter = new ChatsAdapter(getContext(), R.layout.fragment_chats, chatList);
 
+        /*
         int[] profile = {R.drawable.baseline_person_24_blue, R.drawable.baseline_person_24_red};
         String[] name = {"Test", "Arad"};
         int[] status = {R.drawable.baseline_done_all_18_read, R.drawable.baseline_done_all_18_received};
         String[] content = {"Hello World", "Bucharest"};
         String[] time = {"21:30", "07:00"};
         String[] unread = {"0", "1"};
-        addAll(profile, name, status, content, time, unread);
+        addAllChats(profile, name, status, content, time, unread);
+        */
 
         lv.setAdapter(chatsAdapter);
     }
 
-    private void addAll(int[] profile, String[] name, int[] status, String[] content, String[] time, String[] unread) {
+    private void addAllChats(int[] profile, String[] name, int[] status, String[] content, String[] time, String[] unread) {
         for (int i = 0; i < profile.length; i++) {
             addChat(profile[i], name[i], status[i], content[i], time[i], unread[i]);
         }

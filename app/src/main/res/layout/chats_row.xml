@@ -67,6 +67,7 @@
         android:id="@+id/chat_unread"
         app:cardCornerRadius="24dp"
         android:layout_marginTop="10dp"
+        android:theme="@style/AppTheme.CardViewOverlay"
         app:cardBackgroundColor="@color/light_green"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chat_time">

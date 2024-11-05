@@ -50,11 +50,12 @@
         android:layout_marginTop="5dp"
         app:layout_constraintLeft_toRightOf="@id/call_inout"
         app:layout_constraintTop_toBottomOf="@id/call_name"/>
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="15dp"
         android:src="@drawable/outline_call_24"
+        android:background="@color/background"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

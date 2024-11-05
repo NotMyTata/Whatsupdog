@@ -14,7 +14,6 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class ChatsAdapter extends ArrayAdapter<Chat> {
-
     private static class ViewHolder {
         ImageView profile;
         TextView name;

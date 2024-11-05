@@ -28,11 +28,13 @@ public class CallsFragment extends Fragment {
         callList = new ArrayList<Call>();
         callsAdapter = new CallsAdapter(getContext(), R.layout.fragment_calls, callList);
 
+        /*
         int[] profile = {R.drawable.baseline_person_24_blue, R.drawable.baseline_person_24_red};
         String[] name = {"Test", "Arad"};
         int[] inout = {R.drawable.baseline_call_made_success_18, R.drawable.baseline_call_received_failed_18};
         String[] datetime = {"Today, 21:30", "Yesterday, 07:00"};
         addAllCall(profile, name, inout, datetime);
+        */
 
         lv.setAdapter(callsAdapter);
     }
