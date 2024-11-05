@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Whatsupdog" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Dark mode colors -->
-        <item name="colorPrimary">@color/colorPrimaryNight</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkNight</item>
-        <item name="colorAccent">@color/colorAccentNight</item>
+        <item name="colorPrimary">@color/light_green</item>
+        <item name="colorPrimaryDark">@color/light_green</item>
+        <item name="colorAccent">@color/light_green</item>
     </style>
 </resources>

@@ -8,26 +8,38 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+
+import org.intellij.lang.annotations.RegExp;
 
 public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private NavAccessorAdapter navAccessorAdapter;
 
+    private Whatsupdog_db db;
+    private ContactDao contactDao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        db = Whatsupdog_db.getInstance(getApplicationContext());
+        contactDao = db.contactDao();
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         navAccessorAdapter = new NavAccessorAdapter(getSupportFragmentManager());
@@ -105,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
             default: return;
         }
 
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(dialogView);
         builder
@@ -113,6 +124,22 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
+                        switch(position){
+                            case 0: break;
+                            case 1:
+                                String name = ((EditText)dialogView.findViewById(R.id.dialog_add_contact_name_input)).getText().toString();
+                                String phone = ((EditText)dialogView.findViewById(R.id.dialog_add_contact_phonenum_input)).getText().toString();
+
+                                if (name.isEmpty() || phone.isEmpty() || phone.contains(" ")){
+                                    Toast.makeText(MainActivity.this, "Incorrect Value", Toast.LENGTH_LONG).show();
+                                } else {
+                                    contactDao.insertContact(new Contact(R.drawable.baseline_person_24_blue, name, phone));
+                                    Toast.makeText(MainActivity.this, "New Contact Added", Toast.LENGTH_SHORT).show();
+                                    ContactsFragment.addContact(contactDao.getLastContact());
+                                }
+                                break;
+                            default:
+                        }
                         dialog.dismiss();
                     }
                 })

@@ -18,7 +18,7 @@ public abstract class Whatsupdog_db extends RoomDatabase {
                     INSTANCE = Room
                             .databaseBuilder(context.getApplicationContext(),
                             Whatsupdog_db.class, "DB_Whatsupdog")
-                            .build();
+                            .allowMainThreadQueries().build();
                 }
             }
         }

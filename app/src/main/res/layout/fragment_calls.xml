@@ -15,28 +15,10 @@
         android:textSize="20sp"
         android:textColor="@color/white" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:id="@+id/search"
-        app:cardCornerRadius="10dp">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:id="@+id/et_search"
-            android:inputType="text"
-            android:textColor="@color/white"
-            android:hint="Search"
-            android:textColorHint="@color/darker_white"
-            android:background="@color/lighter_background"/>
-    </androidx.cardview.widget.CardView>
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:divider="#00000000"
         android:dividerHeight="15dp"
         android:id="@+id/call_listview"/>

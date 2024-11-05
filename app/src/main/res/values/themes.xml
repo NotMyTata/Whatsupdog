@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Whatsupdog" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Light mode colors -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/light_green</item>
+        <item name="colorPrimaryDark">@color/light_green</item>
+        <item name="colorAccent">@color/light_green</item>
     </style>
 
     <style name="Theme.Whatsupdog" parent="Base.Theme.Whatsupdog" />
@@ -12,13 +12,17 @@
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Light mode colors -->
         <item name="colorPrimaryDark">@color/light_green</item>
-        <item name="colorSecondary">@color/light_green</item>"
+        <item name="colorSecondary">@color/light_green</item>
         <item name="colorAccent">@color/light_green</item>
         <item name="android:background">@color/chat_background</item>
     </style>
 
     <style name="AppTheme.CardViewOverlay" parent="AppTheme">
         <item name="android:background">@color/light_green</item>
+    </style>
+
+    <style name="AppTheme.SearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:background">@color/lighter_background</item>
     </style>
 
 </resources>

@@ -15,9 +15,15 @@ public class NavAccessorAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch(position){
-            case 0: return new ChatsFragment();
-            case 1: return new ContactsFragment();
-            case 2: return new CallsFragment();
+            case 0:
+                ChatsFragment chatsFragment = new ChatsFragment();
+                return chatsFragment;
+            case 1:
+                ContactsFragment contactsFragment = new ContactsFragment();
+                return contactsFragment;
+            case 2:
+                CallsFragment callsFragment = new CallsFragment();
+                return callsFragment;
             default: return null;
         }
     }

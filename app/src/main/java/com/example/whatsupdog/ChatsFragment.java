@@ -29,15 +29,20 @@ public class ChatsFragment extends Fragment {
         chatList = new ArrayList<Chat>();
         chatsAdapter = new ChatsAdapter(getContext(), R.layout.fragment_chats, chatList);
 
-        /*
-        int[] profile = {R.drawable.baseline_person_24_blue, R.drawable.baseline_person_24_red};
+        // TODO - Remove this and replace it with a working database insert and fetch
+        int bp = R.drawable.baseline_person_24_blue;
+        int rp = R.drawable.baseline_person_24_red;
+        int s = R.drawable.baseline_check_18_sent;
+        int rc = R.drawable.baseline_done_all_18_received;
+        int rd = R.drawable.baseline_done_all_18_read;
+
+        int[] profile = {bp, rp};
         String[] name = {"Test", "Arad"};
-        int[] status = {R.drawable.baseline_done_all_18_read, R.drawable.baseline_done_all_18_received};
+        int[] status = {rd, rc};
         String[] content = {"Hello World", "Bucharest"};
         String[] time = {"21:30", "07:00"};
         String[] unread = {"0", "1"};
         addAllChats(profile, name, status, content, time, unread);
-        */
 
         lv.setAdapter(chatsAdapter);
     }

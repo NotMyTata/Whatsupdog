@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    android:background="@color/chat_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
@@ -19,7 +18,7 @@
         android:id="@+id/dialog_add_contact_name_input"
         android:inputType="text"
         android:textColor="@color/white"
-        android:backgroundTint="@color/lighter_background"
+        android:backgroundTint="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/dialog_add_contact_name_text"/>
     <TextView
         android:layout_width="wrap_content"
@@ -34,7 +33,7 @@
         android:id="@+id/dialog_add_contact_phonenum_input"
         android:inputType="number"
         android:textColor="@color/white"
-        android:backgroundTint="@color/lighter_background"
-        app:layout_constraintTop_toBottomOf="@+id/dialog_add_contact_phonenum_text"/>/>
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_add_contact_phonenum_text"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
