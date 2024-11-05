@@ -27,7 +27,7 @@ public class ChatsAdapter extends ArrayAdapter<Chat> {
     public ChatsAdapter(Context context, int resource, ArrayList<Chat> objects) {
         super(context, resource, objects);
     }
-
+    
     public View getView(int position, View ConvertView, ViewGroup parent) {
         Chat data = getItem(position);
 
@@ -54,6 +54,15 @@ public class ChatsAdapter extends ArrayAdapter<Chat> {
         viewChats.content.setText(data.getContent());
         viewChats.name.setText(data.getName());
         viewChats.content.setText(data.getContent());
+        viewChats.time.setText(data.getTime());
+        switch(data.getUnread()){
+            case "0":
+                ((View) viewChats.unread.getParent()).setVisibility(View.INVISIBLE);
+                break;
+            default:
+                viewChats.unread.setText(data.getUnread());
+                ((View) viewChats.unread.getParent()).setVisibility(View.VISIBLE);
+        }
 
         return ConvertView;
     }
